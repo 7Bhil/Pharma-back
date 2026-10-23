@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pharmacies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('proprietaire_id')->constrained('users')->nullOnDelete();
+            $table->foreignId('proprietaire_id')->nullable()->constrained('users')->nullOnDelete();
             $table->string('nom_pharmacie');
             $table->string('ville');
             $table->string('quatier');

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('ordonnance_reponses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ordonnance_id')->constrained('ordonnances')->nullOnDelete();
-            $table->foreignId('pharmacie_id')->constrained('pharmacies')->nullOnDelete();
+            $table->foreignId('ordonnance_id')->nullable()->constrained('ordonnances')->nullOnDelete();
+            $table->foreignId('pharmacie_id')->nullable()->constrained('pharmacies')->nullOnDelete();
             $table->enum('decision', ['Tous_disponible', 'Partiellement', 'Aucun']);
             $table->string('produits_disponibles')->nullable();
             $table->string('commentaire')->nullable();

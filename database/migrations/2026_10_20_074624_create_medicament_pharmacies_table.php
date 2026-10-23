@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('medicament_pharmacies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pharmacie_id')->constrained('pharmacies')->nullOnDelete();
-            $table->foreignId('medicament_id')->constrained('medicaments')->nullOnDelete();
+            $table->foreignId('pharmacie_id')->nullable()->constrained('pharmacies')->nullOnDelete();
+            $table->foreignId('medicament_id')->nullable()->constrained('medicaments')->nullOnDelete();
             $table->integer('quantite');
             $table->string('est_disponible');
             $table->timestamps();
